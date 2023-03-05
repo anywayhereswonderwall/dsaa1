@@ -1,4 +1,4 @@
-//package dsaa.lab01;
+package dsaa.lab01;
 
 import java.util.Scanner;
 

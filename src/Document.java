@@ -1,27 +1,26 @@
-//package dsaa.lab01;
+package dsaa.lab01;
 
 import java.util.Scanner;
 
 public class Document {
     public static void loadDocument(String name, Scanner scan) {
+//        check if file name exists in the directory
         String line = scan.nextLine();
         while (!line.equals("eod")) {
-            if (correctLink(line)) {
                 String[] words = line.split(" ");
                 for (String word : words) {
                     if (correctLink(word))
                     {
                         String[] parts = word.split("=");
-                        System.out.println(parts[1]);
+                        System.out.println(parts[1].toLowerCase());
                     }
                 }
-            }
-            line = scan.nextLine();
+            line = scan.nextLine().strip();
         }
     }
 
     public static boolean correctLink(String link) {
-        if (!link.startsWith("link=")) {
+        if (!link.toLowerCase().startsWith("link=")) {
             return false;
         }
         String[] parts = link.split("=");
@@ -35,6 +34,8 @@ public class Document {
                     return false;
                 }
             }
+        } else {
+            return false;
         }
         return true;
     }

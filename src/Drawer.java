@@ -1,4 +1,4 @@
-//package dsaa.lab01;
+package dsaa.lab01;
 
 public class Drawer {
     private static void drawLine(int n, char ch) {
@@ -16,7 +16,7 @@ public class Drawer {
         int currentLine = 1;
         while(currentLine <= n) {
             drawLine(n - currentLine,'.');
-            drawLine(2 * currentLine - 1,'*');
+            drawLine(2 * currentLine - 1,'X');
             drawLine(n - currentLine,'.');
             System.out.println();
             currentLine++;
@@ -32,7 +32,7 @@ public class Drawer {
             int current_line = 1;
             while (current_line <= cur_height) {
                 drawLine(n - current_line, '.');
-                drawLine(2 * current_line - 1, '*');
+                drawLine(2 * current_line - 1, 'X');
                 drawLine(n - current_line, '.');
                 System.out.println();
                 current_line++;
